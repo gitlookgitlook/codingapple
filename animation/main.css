@@ -16,6 +16,7 @@ div {
   visibility: hidden;
   opacity: 0;
   transition: all 1s;
+  transform: translateY(-100%);
 }
 .white-bg {
   background: white;
@@ -26,4 +27,5 @@ div {
 .show-modal {
   visibility: visible;
   opacity: 1;
+  transform: translateY(0);
 }
