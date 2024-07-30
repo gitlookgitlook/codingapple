@@ -29,3 +29,15 @@ div {
   opacity: 1;
   transform: translateY(0);
 }
+
+.list-group {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.show-group {
+  visibility: visible;
+  height: 206px;
+}
