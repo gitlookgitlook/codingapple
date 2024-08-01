@@ -61,9 +61,17 @@
     })
 
     // form에 있는 전송버튼을 클릭하면, 첫번째 input에 입력한 값이 공백이면 alert()띄우기
+    // 추가 1. 전송버튼을 누를 때 아이디랑 패스워드 둘 다 공백 검사하려면?
+    // 추가 2. 전송버튼을 누를 때 입력한 비번이 6자 미만이면 알람띄우기
     document.querySelector("#sub-btn").addEventListener("click", function (e) {
       if (document.querySelector("#id-input").value.trim() == "") {
-        alert("아이디를 입력해주세요!")
+        alert("아이디를 입력해주세요🩵")
+        e.preventDefault()
+      } else if (document.querySelector("#pw-input").value.trim() == "") {
+        alert("비밀번호를 입력해주세요💜")
+        e.preventDefault()
+      } else if (document.querySelector("#pw-input").value.length < 6) {
+        alert("비밀번호를 6자리 이상으로 부탁드려요 :)")
         e.preventDefault()
       }
     })
