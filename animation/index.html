@@ -23,6 +23,9 @@
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <span class="navbar-brand">Navbar</span>
+        <span id="dark-btn" class="badge bg-dark ms-auto mx-3 p-2 fs-5"
+          >Dark 🌙</span
+        >
         <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,6 +67,19 @@
       // navbar 버튼을 클릭하면 서브메뉴를 제거해줘
       $(".navbar-toggler").on("click", function () {
         $(".list-group").toggleClass("show-group")
+      })
+
+      // 다크버튼을 클릭횟수가 홀수면 Light로 변경해줘, 짝수면 Dark로 변경해줘
+      var count = 0
+      $("#dark-btn").on("click", function () {
+        count++
+        if (count % 2 == 0) {
+          $("#dark-btn").html("Light 🌞")
+          $("#dark-btn").addClass("bg-white")
+        } else {
+          $("#dark-btn").html("Dark 🌙")
+          $("#dark-btn").removeClass("bg-white")
+        }
       })
     </script>
   </body>

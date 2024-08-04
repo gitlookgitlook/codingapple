@@ -41,3 +41,8 @@ div {
   visibility: visible;
   height: 206px;
 }
+
+.bg-white {
+  background-color: #ffffff;
+  color: black;
+}
