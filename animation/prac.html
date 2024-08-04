@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if/else, function 실력향상 과제</title>
+  </head>
+  <body>
+    <script>
+      // 2.
+      // function 삼육구게임(num) {
+      //   if (num % 9 == 0) {
+      //     console.log(" 9의 배수 👏🏻👏🏻")
+      //   } else if (num % 3 == 0) {
+      //     console.log(" 3의 배수 👏🏻")
+      //   } else {
+      //     console.log("🚨3, 9의 배수가 아닙니다🚨")
+      //   }
+      // }
+
+      // 3. 내가 짠 코드도 큰 오류는 없었지만, 출제자의 의도에서는 벗어났음. 조건문에서 과락 여부를 확인하는 부분이 잘못 되었음 (과락 조건 : 한 과목이라도 40점 미만)
+      // function 합격했냐(a, b) {
+      //   if (a + b >= 120 && a > 40 && b > 40) {
+      //     console.log("합격🎉")
+      //   } else {
+      //     console.log("불합격😢")
+      //   }
+
+      // }
+
+      // 3. 수정 코드
+      // function 합격했냐(a, b) {
+      //   if (a < 40 || b < 40) {
+      //     console.log("불합격😢")
+      //   } else if (a + b >= 120) {
+      //     console.log("합격🎉")
+      //   } else {
+      //     console.log("불합격😢")
+      //   }
+      // }
+
+      // 4. 응용 369
+      // // function 리얼삼육구게임(num) {
+      // //   if (num % 10 == 3 || num % 10 == 6 || num % 10 == 9) {
+      // //     console.log("👏🏻👏🏻👏🏻")
+      // //   } else {
+      // //     console.log("통과")
+      // //   }
+      // }
+
+      // 5.
+      function 합격했냐(a, b) {
+        if (a < 0 || a > 100 || b < 0 || b > 100) {
+          alert("장난치지맙시다🤬")
+          return
+        } else if (a < 40 || b < 40) {
+          console.log("불합격😢")
+        } else if (a + b >= 120) {
+          console.log("합격🎉")
+        } else {
+          console.log("불합격😢")
+        }
+      }
+      // return -> 자바스크립트에서 함수의 실행을 종료하고, 호출한 위치로 값을 반환하는 키워드 / return이 실행되면 그 뒤의 코드는 실행되지 않으며, 함수를 즉시 종료시킴
+    </script>
+  </body>
+</html>
