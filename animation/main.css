@@ -42,7 +42,16 @@ div {
   height: 206px;
 }
 
+/* (참고) Bootstrap 스타일이 적용된 요소는 css 덮어쓰기가 어려울 수 있습니다.
+bg-dark 클래스명을 bg-light 이런 식으로 바꾸거나 아니면 붙어있던 class를 제거하거나 그러면 됩니다. */
+
+/* 진짜 다크모드는 <body>에 미리 만들어놓은 클래스 부착, 제거 코드 작성 */
+
 .bg-white {
   background-color: #ffffff;
   color: black;
+}
+
+.badge {
+  cursor: pointer;
 }
