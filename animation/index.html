@@ -35,6 +35,12 @@
 
     <!-- 모달창 띄우는 버튼 -->
     <button id="login">로그인</button>
+
+    <!-- Bootstrap으로 alert창 만들기  -->
+    <div class="alert alert-danger" role="alert">
+      <p><span id="num">5</span>초 이내 구매시 사은품 증정</p>
+    </div>
+    <div></div>
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -75,5 +81,62 @@
         e.preventDefault()
       }
     })
+    // 알림창 - 페이지 방문 5초 후에 위의 <div>를 숨기려면 코드를 어떻게 짜야할까요?
+    // // 1.
+    // setTimeout(function () {
+    //   document.querySelector(".alert").style.visibility = "hidden"
+    // }, 5000)
+
+    // // 2.
+    // setTimeout(() => {
+    //   document.querySelector(".alert").style.visibility = "hidden"
+    // }, 5000)
+
+    // 3.
+    // setTimeout(function () {
+    //   $(".alert").hide()
+    // }, 1000)
+
+    // 1초마다 5라는 문자를 1씩 감소 시키기, 0이 되면 <div>를 안보이게 처리하기
+    // 5라는 문자만 <span>를 이용해서 감싸면 html 조작하기 쉬워짐
+
+    // 1. 제대로 작동 안되는 코드 -> ⭐️ 순서를 세분화 하지 않았다!
+
+    // setInterval(() => {
+    //   var count = document.querySelector("#num").innerHTML
+    //   count--
+    //   // count를 감소시킨 후, 다시 #num요소의 innerHTML에 반영햐는 것을 안함 (=감소된 값이 화면에 업데이트 안됨)
+    //   if (count == 0) {
+    //     document.querySelector(".alert").style.visibility = "hidden"
+    //   }
+    // }, 1000)
+
+    // 2. 1번에서 수정된 코드 but this 개념 안배움
+
+    // setInterval(() => {
+    //   var countElement = document.querySelector("#num") // #num 요소를 가져옴
+    //   var count = parseInt(countElement.innerHTML) // #num 요소의 현재 숫자 값을 가져옴 , 문자열을 정수로 변환 할 때 사용하는 함수
+    //   count-- // count 값을 감소
+    //   countElement.innerHTML = count // 감소된 count 값을 다시 #num 요소에 반영
+
+    //   if (count <= 0) {
+    //     // count 값이 0 이하가 되면
+    //     document.querySelector(".alert").style.visibility = "hidden" // .alert 요소 숨김
+    //     clearInterval(this) // setInterval 중지
+    //   }
+    // }, 1000)
+
+    // 3. 강사님 코드
+    // count -=1은 count = count - 1과 동일한 의미를 가짐
+    var count = 5
+    var timer = setInterval(function () {
+      count -= 1
+      if (count > 0) {
+        document.querySelector("#num").innerHTML = count
+      } else {
+        clearInterval(timer)
+        document.querySelector(".alert").style.visibility = "hidden"
+      }
+    }, 1000)
   </script>
 </html>
